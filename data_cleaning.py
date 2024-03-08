@@ -71,7 +71,6 @@ def outliers(df):
 
     for col in numeric_cols.columns:
         data = numeric_cols[col]
-
         # Z-Score Method
         z_score = np.abs((data - data.mean()) / data.std())
         outliers_z_score = np.sum(z_score > 3)  # Typically, a Z-Score above 3 is considered as an outlier
