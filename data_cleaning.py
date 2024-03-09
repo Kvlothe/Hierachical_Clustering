@@ -183,15 +183,9 @@ def clean_data(data):
 
     # **** EDIT THIS FOR DIFFERENT DATA SETS! *****
     # Thinking about making a selection process to pick the columns that should be excluded rather than hard-code
-    # Create a group for columns that I want to keep around but do not want to use for analysis, then create
+    # Create a group for columns that I want to keep around but do not want to use for analysis
     columns_to_keep = ['CaseOrder', 'Customer_id', 'Interaction', 'UID', 'Job', 'Zip', 'Population', 'Lat', 'Lng']
     data_analysis = columns_renamed.drop(columns=columns_to_keep)
-
-    # **** EDIT THIS FOR DIFFERENT DATA SETS! *****
-    # Would like to figure out how to make the program detect if a column is binary so the mapping is a null point
-    # Encoding - Binary and One-hot
-    # Define your binary mapping
-    # binary_mapping = {'Yes': 1, 'No': 0, 'DSL': 1, 'Fiber Optic': 0}
 
     # Apply binary mapping to binary columns automatically and get a list of mapped columns
     data_mapped, mapped_binary_columns = automatic_binary_mapping(data_analysis)
